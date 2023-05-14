@@ -28,6 +28,8 @@ extension ViewController: UITableViewDataSource {
 
         if values[indexPath.row] == true {
             cell.imageView?.image = checkMark
+        } else {
+            cell.imageView?.image = nil
         }
 
         return cell
