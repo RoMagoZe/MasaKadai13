@@ -21,12 +21,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let keys = fruit.fruits.map { $0.key }
-        let values = fruit.fruits.map {$0.value}
+        cell.textLabel?.text = fruit.fruits[indexPath.row].key
 
-        cell.textLabel?.text = keys[indexPath.row]
-
-        if values[indexPath.row] == true {
+        if fruit.fruits[indexPath.row].value {
             cell.imageView?.image = checkMark
         } else {
             cell.imageView?.image = nil
